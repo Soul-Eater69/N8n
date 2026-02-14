@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+*.md
+!ARCHITECTURE.md
+.env
+.env.local
+.env.*.local
+dist
+coverage
+.nyc_output
+*.log
+.DS_Store
+Thumbs.db

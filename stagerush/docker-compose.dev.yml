@@ -1,0 +1,23 @@
+# ─── StageRush Development Override ─────────────────────────────────
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+# Only starts infrastructure services; run API & frontend locally.
+# ────────────────────────────────────────────────────────────────────
+
+version: "3.9"
+
+services:
+  postgres:
+    ports:
+      - "5432:5432"
+
+  redis:
+    ports:
+      - "6379:6379"
+
+  # Disable production app containers in dev
+  api:
+    profiles: ["production"]
+  frontend:
+    profiles: ["production"]
+  nginx:
+    profiles: ["production"]
